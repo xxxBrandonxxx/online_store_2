@@ -17,3 +17,40 @@
     text-transform: capitalize;
     cursor: pointer;
 }
+
+.container{
+    padding: 0 20px !important; 
+    margin: 0 auto !important;
+    max-width: 1200px !important;
+    padding-bottom: 70px !important;
+}
+
+.container .user_profile{
+    padding: 20px !important;
+    text-align: center !important;
+    border: var(--border) !important;
+    background-color: var(--grey) !important;
+    box-shadow: var(--box-shadow) !important;
+    border-radius: 5px !important;
+    margin:20 auto !important;
+    max-width: 500px !important;
+}
+
+.container .user_profile p{
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: chartreuse;
+}
+
+.container .user_profile p span{
+    color:rgb(113, 241, 113)
+}
+
+.container .user_profile .flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+}

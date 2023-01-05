@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include 'config.php';
+session_start();
 
 if(isset($_POST['submit'])){
 
@@ -15,7 +16,7 @@ if(isset($_POST['submit'])){
 
     if(mysqli_num_rows($select) > 0){
         $row = mysqli_fetch_assoc($select);
-        echo $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_id'] = $row['id'];
         header('location:index.php');
     }else{
         $message[] = 'incorrect password or email!';
@@ -56,13 +57,13 @@ if(isset($_POST['submit'])){
     }
   ?>
 
-    <div class="vh-100 gradient-custom ">
+<div class="vh-100 gradient-custom ">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card bg-dark text-white" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center">
-                            <div class="mb-md-5 mt-md-4 pb-5">
+                            <div class="mb-md-1 mt-md-1 pb-1">
                                 <h2 class="fw-bold mb-2 text-uppercase">Login now</h2>
                                 <form action='' method="post">
                                     <div class="form-outline form-white mb-4">
