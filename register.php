@@ -1,10 +1,31 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include 'config.php';
 
+if(isset($_POST['submit'])){
+
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+
+    $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+
+    if(mysqli_num_rows($select) > 0){
+        $message[] = 'user already exist!';
+    }else{
+        mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) VALUES('$name','$email','$pass')") or die('query failed');
+        $message[] = 'registered successfully!';
+        header('location:login.php');
+    }
+}
+
+
 ?>
-
-
 
 
 
@@ -23,11 +44,20 @@ include 'config.php';
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <link rel="stylesheet" href="src/styles.css">
-    <title>Apex SkateShop</title>
+    <title>Register Apex</title>
 
 </head>
 
 <body>
+
+  <?php
+    if(isset($message)){
+        foreach($message as $message){
+            echo '<div class="message" onclick="this.remove();">' .$message.'</div>';
+        }
+    }
+  ?>
+
     <div class="vh-100 gradient-custom ">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -54,7 +84,7 @@ include 'config.php';
                                         <label class="form-label" for="typePasswordX">Confirm Password</label>
                                     </div>
                                     <div>
-                                        <button class="btn btn-outline-light btn-lg px-5" href="login.php" value="register now" type="submit" name="login_user">Login</button>
+                                        <button class="btn btn-outline-light btn-lg px-5" value="register now" type="submit" name="submit">Register</button>
                                     </div>
                                 </form>
                                 <p class="text-white-50 mb-5">Already have an account? <a href="login.php">Login now</a></p>
