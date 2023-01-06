@@ -54,3 +54,44 @@
     gap: 10px;
     text-align: center;
 }
+
+.container .products .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.container .products .box-container .box{
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    position: relative;
+    padding: 20px;
+    background-color: var(--white);
+}
+
+#images{
+    height: 250px;
+
+}
+
+.container .heading{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: gray;
+
+}
+
+.container .products .box-container .box .price{
+    position: absolute;
+    top: 10px; left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: orange;
+    color: blue;
+    font-size: 25px;
+}
