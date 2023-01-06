@@ -4,94 +4,234 @@
     font-family: "Audiowide", sans-serif;
 }
 
-.message {
-    
-    position: sticky;
-    top: 0;left: 0; right: 0;
-    padding: 15px 10px;
-    background-color: rgb(10, 201, 201);
+#wallpaperLogin {
+    background-image: url(https://cdn.pixabay.com/photo/2014/07/10/11/15/skateboarder-388977_960_720.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 90px;
+}
+
+#wallpaperReg {
+    background-image: url(https://img.freepik.com/premium-vector/skateboard-cartoon-character-seamless-pattern-pink-background_618978-2137.jpg?w=2000);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 90px;
+}
+
+#about {
+    background-image: url(/src/images/skateshop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#apex {
+    background-image: url(/src/images/hd.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap');
+
+/* Core Styles */
+
+
+
+
+section {
     text-align: center;
-    z-index: 1000;
-    box-shadow: var(--box-shadow);
-    font-size: 35px;
-    text-transform: capitalize;
-    cursor: pointer;
+    padding: 1.5em 1em;
 }
 
-.container{
-    padding: 0 20px !important; 
-    margin: 0 auto !important;
-    max-width: 1200px !important;
-    padding-bottom: 70px !important;
-}
 
-.container .user_profile{
-    padding: 20px !important;
-    text-align: center !important;
-    border: var(--border) !important;
-    background-color: var(--grey) !important;
-    box-shadow: var(--box-shadow) !important;
-    border-radius: 5px !important;
-    margin:20 auto !important;
-    max-width: 500px !important;
-}
-
-.container .user_profile p{
-    margin-bottom: 15px;
-    font-size: 25px;
-    color: chartreuse;
-}
-
-.container .user_profile p span{
-    color:rgb(113, 241, 113)
-}
-
-.container .user_profile .flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    text-align: center;
-}
-
-.container .products .box-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.container .products .box-container .box{
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: var(--box-shadow);
-    border: var(--border);
-    position: relative;
-    padding: 20px;
-    background-color: var(--white);
-}
-
-#images{
-    height: 250px;
-
-}
-
-.container .heading{
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 40px;
+.header h1 {
+    margin-bottom: 0.25em;
+    font-weight: 600;
     text-transform: uppercase;
-    color: gray;
-
 }
 
-.container .products .box-container .box .price{
+.header a {
+    text-decoration: none;
+    color: #1d1d1d;
+    font-weight: 700;
+    transition: all 0.35s ease-in-out;
+}
+
+.header a:hover {
+    color: #e99041;
+}
+
+.row {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.heading {
+    margin-bottom: 1em;
+}
+
+.figure {
+    background: #1d1d1d;
+    display: inline-block;
+    margin: 10px;
+    max-width: 280px;
+    min-width: 230px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.figure * {
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+
+.section-6 {
+    background: #1d1d1d;
+    color: #efefef;
+}
+
+.section-6 .figure {
+    text-align: left;
+    background: #1d1d1d;
+    font-size: 16px;
+}
+
+.section-6 .figure img {
+    position: relative;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.section-6 figcaption {
     position: absolute;
-    top: 10px; left: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: orange;
-    color: blue;
-    font-size: 25px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    padding: 20px 30px;
+}
+
+.section-6 .figure figcaption:before,
+.section-6 .figure figcaption:after {
+    width: 1px;
+    height: 0;
+}
+
+.section-6 .figure figcaption:before {
+    right: 0;
+    top: 0;
+}
+
+.section-6 .figure figcaption:after {
+    left: 0;
+    bottom: 0;
+}
+
+.section-6 .figure h3,
+.section-6 .figure p {
+    line-height: 1.5em;
+}
+
+.section-6 .figure h3 {
+    margin: 0 0 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-6 .figure p {
+    font-size: 0.8em;
+    font-weight: 400;
+    margin: 0 0 15px;
+}
+
+.section-6 .figure a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.section-6 .figure:before,
+.section-6 .figure:after,
+.section-6 .figure figcaption:before,
+.section-6 .figure figcaption:after {
+    position: absolute;
+    content: '';
+    background-color: #efefef;
+    z-index: 1;
+    -webkit-transition: all 0.35s ease-in;
+    transition: all 0.35s ease-in;
+    opacity: 0.8;
+}
+
+.section-6 .figure:before,
+.section-6 .figure:after {
+    height: 1px;
+    width: 0%;
+}
+
+.section-6 .figure:before {
+    top: 0;
+    left: 0;
+}
+
+.section-6 .figure:after {
+    bottom: 0;
+    right: 0;
+}
+
+.section-6 .figure:hover img,
+.section-6 .figure.hover img {
+    opacity: 0.4;
+}
+
+.section-6 .figure:hover figcaption:before,
+.section-6 .figure.hover figcaption:before,
+.section-6 .figure:hover figcaption:after,
+.section-6 .figure.hover figcaption:after {
+    height: 100%;
+}
+
+.section-6 .figure:hover figcaption {
+    opacity: 1;
+}
+
+.section-6 .figure:hover:before,
+.section-6 .figure.hover:before,
+.section-6 .figure:hover:after,
+.section-6 .figure.hover:after {
+    width: 100%;
+}
+
+.section-6 .figure:hover:before,
+.section-6 .figure.hover:before,
+.section-6 .figure:hover:after,
+.section-6 .figure.hover:after,
+.section-6 .figure:hover figcaption:before,
+.section-6 .figure.hover figcaption:before,
+.section-6 .figure:hover figcaption:after,
+.section-6 .figure.hover figcaption:after {
+    opacity: 0.1;
+}
+
+/* Footer */
+
+footer.footer {
+    text-align: center;
+    color: #efefef;
+    background: #1d1d1d;
+    font-size: 0.8em;
+    padding-bottom: 1.5em;
+    font-style: italic;
 }
