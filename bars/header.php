@@ -10,10 +10,7 @@
                         <a class="nav-link" href="./about.php">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./apex.php">Apex Store</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./cart.php">Cart</a>
+                        <a class="nav-link" href="./index.php">Apex Store</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./lookbook.php">LookBook</a>
@@ -25,13 +22,6 @@
                         <a class="nav-link" href="./index.php">Logout</a>
                     </li>
                 </ul>
-                <form class="d-flex" action="./cart.php">
-                    <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button>
-                </form>
             </div>
         </div>
     </nav>
