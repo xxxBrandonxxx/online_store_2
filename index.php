@@ -68,6 +68,7 @@ if(isset($_GET['remove'])){
 </head>
 
 <body>
+<!-- <div class="message" onclick="this.remove();">Flip dit</div>' -->
 <?php include __DIR__ . "/bars/header.php"; ?>
     <div class="background">
         <?php
@@ -78,7 +79,7 @@ if(isset($_GET['remove'])){
         }
         ?>
         <div class="container">
-            <div class="user_profile">
+            <div class="user_profile" style="margin-top: 60px;">
 <!-- fetching user id -->
                 <?php
                 $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query_failed');

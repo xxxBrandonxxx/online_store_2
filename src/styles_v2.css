@@ -34,16 +34,13 @@
 body{
    background-color: var(--light-bg);
 }
-.background{
-   background-image: ;
-}
 .message{
    position: sticky;
    top:0; left:0; right:0;
    padding:15px 10px;
    background-color: var(--white);
    text-align: center;
-   z-index: -1000;
+   z-index: 3;
    box-shadow: var(--box-shadow);
    color:var(--black);
    font-size: 20px;
