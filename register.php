@@ -1,5 +1,5 @@
 <?php
-
+// check for any errors
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -7,16 +7,18 @@ error_reporting(E_ALL);
 include 'config.php';
 
 if(isset($_POST['submit'])){
-
+//This function is used to create a legal SQL string that can be used in an SQL statement.
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
     $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
 
+ // if user exists
     $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
-
     if(mysqli_num_rows($select) > 0){
         $message[] = 'user already exist!';
+
+// else insert into database username email and password
     }else{
         mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) VALUES('$name','$email','$pass')") or die('query failed');
         $message[] = 'registered successfully!';
@@ -51,6 +53,8 @@ if(isset($_POST['submit'])){
 <body>
 
   <?php
+  // any message pops up because an username already exist show error otherwise add to database
+  // register page was done using Bootstrap 5
     if(isset($message)){
         foreach($message as $message){
             echo '<div class="message" onclick="this.remove();">' .$message.'</div>';
@@ -58,7 +62,7 @@ if(isset($_POST['submit'])){
     }
   ?>
 
-    <div class="vh-100 gradient-custom ">
+    <div class="vh-150 gradient-custom " id="wallpaperLogin">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">

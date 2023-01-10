@@ -7,11 +7,15 @@ error_reporting(E_ALL);
 include 'config.php';
 session_start();
 
+
+
+// check if password matches with database registry
 if(isset($_POST['submit'])){
 
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
 
+// if username or password don't match throw an error username or password is incorrect
     $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
     if(mysqli_num_rows($select) > 0){

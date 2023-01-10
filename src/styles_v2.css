@@ -48,6 +48,10 @@ body{
    cursor: pointer;
 }
 
+.user_profile{
+margin-top: 60px;
+}
+
 .btn,
 .delete-btn,
 .option-btn{
